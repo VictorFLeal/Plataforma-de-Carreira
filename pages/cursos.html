@@ -105,7 +105,56 @@
       </section>
 
       <section class="content-grid">
-        </section>
+        <div class="card-item curso-card">
+          <div class="card-image">Imagem do Curso</div>
+          <div class="card-content">
+            <h3>Desenvolvimento Web Full Stack</h3>
+            <p class="provider">Por LevelUp Academy</p>
+            <div class="tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">React</span>
+              <span class="tag">Node.js</span>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn-primary">Ver Detalhes</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item curso-card">
+          <div class="card-image">Imagem do Curso</div>
+          <div class="card-content">
+            <h3>UI/UX Design para Iniciantes</h3>
+            <p class="provider">Por Ana Souza</p>
+            <div class="tags">
+              <span class="tag">Figma</span>
+              <span class="tag">Prototipagem</span>
+              <span class="tag">User Research</span>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn-primary">Ver Detalhes</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item curso-card">
+          <div class="card-image">Imagem do Curso</div>
+          <div class="card-content">
+            <h3>Marketing Digital Essencial</h3>
+            <p class="provider">Por Escola de Marketing</p>
+            <div class="tags">
+              <span class="tag">SEO</span>
+              <span class="tag">Google Ads</span>
+              <span class="tag">Social Media</span>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn-primary">Ver Detalhes</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script src="../assets/js/database.js"></script>
@@ -132,6 +181,7 @@
                 });
             }
 
+            // Popula os dados do usuário no dropdown
             const user = window.currentUser;
             const dropdownUserName = document.getElementById('dropdown-user-name');
             const dropdownUserEmail = document.getElementById('dropdown-user-email');
