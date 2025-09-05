@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="../assets/css/styles.css" />
     <link rel="stylesheet" href="../assets/css/cursos-vagas.css" />
+    <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,7 +15,6 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon" />
 
     <script>
       (function () {
@@ -105,58 +105,42 @@
       </section>
 
       <section class="content-grid">
-        <div class="card-item curso-card">
-          <div class="card-image">Imagem do Curso</div>
-          <div class="card-content">
-            <h3>Desenvolvimento Web Full Stack</h3>
-            <p class="provider">Por LevelUp Academy</p>
-            <div class="tags">
-              <span class="tag">HTML5</span>
-              <span class="tag">CSS3</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">React</span>
-              <span class="tag">Node.js</span>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn-primary">Ver Detalhes</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-item curso-card">
-          <div class="card-image">Imagem do Curso</div>
-          <div class="card-content">
-            <h3>UI/UX Design para Iniciantes</h3>
-            <p class="provider">Por Ana Souza</p>
-            <div class="tags">
-              <span class="tag">Figma</span>
-              <span class="tag">Prototipagem</span>
-              <span class="tag">User Research</span>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn-primary">Ver Detalhes</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-item curso-card">
-          <div class="card-image">Imagem do Curso</div>
-          <div class="card-content">
-            <h3>Marketing Digital Essencial</h3>
-            <p class="provider">Por Escola de Marketing</p>
-            <div class="tags">
-              <span class="tag">SEO</span>
-              <span class="tag">Google Ads</span>
-              <span class="tag">Social Media</span>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn-primary">Ver Detalhes</a>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
     </main>
 
     <script src="../assets/js/database.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userAvatarBtn = document.getElementById('user-avatar-btn');
+            const userDropdownMenu = document.getElementById('user-dropdown-menu');
+
+            if (userAvatarBtn && userDropdownMenu) {
+                userAvatarBtn.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    userDropdownMenu.classList.toggle('active');
+                });
+
+                window.addEventListener('click', () => {
+                    if (userDropdownMenu.classList.contains('active')) {
+                        userDropdownMenu.classList.remove('active');
+                    }
+                });
+
+                userDropdownMenu.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                });
+            }
+
+            const user = window.currentUser;
+            const dropdownUserName = document.getElementById('dropdown-user-name');
+            const dropdownUserEmail = document.getElementById('dropdown-user-email');
+
+            if (user && dropdownUserName && dropdownUserEmail) {
+                dropdownUserName.textContent = user.name;
+                dropdownUserEmail.textContent = user.email;
+            }
+        });
+    </script>
 </body>
 </html>
