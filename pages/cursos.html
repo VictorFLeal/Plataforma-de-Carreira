@@ -181,14 +181,16 @@
                 });
             }
 
-            // Popula os dados do usuário no dropdown
-            const user = window.currentUser;
-            const dropdownUserName = document.getElementById('dropdown-user-name');
-            const dropdownUserEmail = document.getElementById('dropdown-user-email');
+            // Popula os dados do usuário no dropdown, se o database.js foi carregado
+            if (window.currentUser) {
+                const user = window.currentUser;
+                const dropdownUserName = document.getElementById('dropdown-user-name');
+                const dropdownUserEmail = document.getElementById('dropdown-user-email');
 
-            if (user && dropdownUserName && dropdownUserEmail) {
-                dropdownUserName.textContent = user.name;
-                dropdownUserEmail.textContent = user.email;
+                if (user && dropdownUserName && dropdownUserEmail) {
+                    dropdownUserName.textContent = user.name;
+                    dropdownUserEmail.textContent = user.email;
+                }
             }
         });
     </script>
