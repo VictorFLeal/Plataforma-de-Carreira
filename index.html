@@ -8,51 +8,50 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
 
     <script>
-  (function() {
-    const theme = localStorage.getItem('theme');
-    if (theme === 'dark') {
-      document.documentElement.classList.add('theme-dark');
-    }
-  })();
-</script>
+      (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('theme-dark');
+        }
+      })();
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <a href="/index.html">
-                <img src="/assets/images/LOGO-LEVELUP.png" alt="Logo LevelUp">
+            <a href="index.html">
+                <img src="assets/images/LOGO-LEVELUP.png" alt="Logo LevelUp">
             </a>
         </div>
         <nav class="nav">
-            <a href="/index.html" class="active">Início</a>
-            <a href="/pages/conquistas.html">Conquistas</a>
-            <a href="/pages/cursos.html">Cursos</a>
-            <a href="/pages/vagas.html">Vagas</a>
-            <a href="/pages/curriculo.html">Currículo</a>
+            <a href="index.html" class="active">Início</a>
+            <a href="pages/conquistas.html">Conquistas</a>
+            <a href="pages/cursos.html">Cursos</a>
+            <a href="pages/vagas.html">Vagas</a>
+            <a href="pages/curriculo.html">Currículo</a>
         </nav>
 
         <div class="user-profile">
-            <img src="/assets/images/avatar-default.svg" alt="Usuário" class="avatar" id="user-avatar-btn">
-
+            <img src="assets/images/avatar-default.svg" alt="Usuário" class="avatar" id="user-avatar-btn">
             <div class="dropdown-menu" id="user-dropdown-menu">
                 <div class="dropdown-header">
-                    <img src="/assets/images/avatar-default.svg" alt="Usuário" class="dropdown-avatar" id="dropdown-user-photo">
+                    <img src="assets/images/avatar-default.svg" alt="Usuário" class="dropdown-avatar" id="dropdown-user-photo">
                     <div class="user-info">
                         <span class="user-name" id="dropdown-user-name">[Nome do Usuário]</span>
                         <span class="user-email" id="dropdown-user-email">[email@exemplo.com]</span>
                     </div>
                 </div>
                 <nav class="dropdown-nav">
-                    <a href="/pages/perfil.html">
+                    <a href="pages/perfil.html">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                         Meu Perfil
                     </a>
-                    <a href="/pages/configuracoes.html">
+                    <a href="pages/configuracoes.html">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 0 2l-.15.08a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1 0-2l.15-.08a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                         Configurações
                     </a>
@@ -69,52 +68,49 @@
         <section class="hero-banner">
             <h2 id="welcome-message">Bem-vindo(a) de volta, [Nome do Usuário]!</h2>
             <p>Seu centro de comando para evoluir na carreira.</p>
-
             <div class="progress-container">
                 <div id="profile-progress-bar" class="progress-bar"></div>
             </div>
             <span id="progress-text"></span>
-            <a href="/pages/perfil.html" class="btn-primary">Ver meu Perfil</a>
+            <a href="pages/perfil.html" class="btn-primary">Ver meu Perfil</a>
         </section>
 
         <section class="feature-cards">
-    <div class="card circular-card">
-        <div class="icon-container">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFC107"/>
-            </svg>
-        </div>
-        <h3>Conquistas</h3>
-        <p>Veja seu progresso e conquistas.</p>
-        <div id="conquistas-list" class="content-placeholder">
-            <p>Nenhuma conquista registrada ainda.</p>
-        </div>
-    </div>
-
-    <div class="card circular-card">
-    <div class="icon-container">
-        <img src="/assets/images/play-icon.png" alt="Ícone de Cursos" width="40" height="40">
-    </div>
-    <h3>Cursos Recomendados</h3>
-    <p>Descubra cursos alinhados ao seu perfil.</p>
-    <div id="cursos-list" class="content-placeholder">
-        <p>Nenhuma recomendação de curso no momento.</p>
-    </div>
-</div>
-
-    <div class="card circular-card">
-        <div class="icon-container">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22 6H15V3C15 2.44772 14.5523 2 14 2H10C9.44772 2 9 2.44772 9 3V6H2V20C2 20.5523 2.44772 21 3 21H21C21.5523 21 22 20.5523 22 20V6ZM11 4H13V6H11V4ZM16 6H8V18H16V6Z" fill="#2196F3"/>
-            </svg>
-        </div>
-        <h3>Vagas Recomendadas</h3>
-        <p>Encontre oportunidades perfeitas para você.</p>
-        <div id="vagas-list" class="content-placeholder">
-            <p>Nenhuma vaga recomendada no momento.</p>
-        </div>
-    </div>
-</section>
+            <div class="card circular-card">
+                <div class="icon-container">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFC107"/>
+                    </svg>
+                </div>
+                <h3>Conquistas</h3>
+                <p>Veja seu progresso e conquistas.</p>
+                <div id="conquistas-list" class="content-placeholder">
+                    <p>Nenhuma conquista registrada ainda.</p>
+                </div>
+            </div>
+            <div class="card circular-card">
+                <div class="icon-container">
+                    <img src="assets/images/play-icon.png" alt="Ícone de Cursos" width="40" height="40">
+                </div>
+                <h3>Cursos Recomendados</h3>
+                <p>Descubra cursos alinhados ao seu perfil.</p>
+                <div id="cursos-list" class="content-placeholder">
+                    <p>Nenhuma recomendação de curso no momento.</p>
+                </div>
+            </div>
+            <div class="card circular-card">
+                <div class="icon-container">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 6H15V3C15 2.44772 14.5523 2 14 2H10C9.44772 2 9 2.44772 9 3V6H2V20C2 20.5523 2.44772 21 3 21H21C21.5523 21 22 20.5523 22 20V6ZM11 4H13V6H11V4ZM16 6H8V18H16V6Z" fill="#2196F3"/>
+                    </svg>
+                </div>
+                <h3>Vagas Recomendadas</h3>
+                <p>Encontre oportunidades perfeitas para você.</p>
+                <div id="vagas-list" class="content-placeholder">
+                    <p>Nenhuma vaga recomendada no momento.</p>
+                </div>
+            </div>
+        </section>
 
         <section class="resume-section">
             <h3>Monte seu currículo perfeito em minutos</h3>
@@ -123,7 +119,7 @@
                     <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6C5.44772 2 5 2.44772 5 3V21C5 21.5523 5.44772 22 6 22H18C18.5523 22 19 21.5523 19 21V8L14 2ZM13 3.5V8H18.5L13 3.5Z" fill="#3B82F6"/><path d="M15 14H9C8.44772 14 8 13.5523 8 13C8 12.4477 8.44772 12 9 12H15C15.5523 12 16 12.4477 16 13C16 13.5523 15.5523 14 15 14Z" fill="#1E40AF"/><path d="M15 18H9C8.44772 18 8 17.5523 8 17C8 16.4477 8.44772 16 9 16H15C15.5523 16 16 16.4477 16 17C16 17.5523 15.5523 18 15 18Z" fill="#1E40AF"/></svg>
                 </div>
                 <div class="resume-actions">
-                    <a href="/pages/curriculo.html" class="btn-primary">Criar Novo Currículo</a>
+                    <a href="pages/curriculo.html" class="btn-primary">Criar Novo Currículo</a>
                     <button class="btn-primary export-pdf">Exportar para PDF</button>
                 </div>
             </div>
@@ -132,9 +128,8 @@
 
     <div id="pdf-render-target" style="visibility: hidden; position: fixed; top: 0; left: 0; height: 0; overflow: hidden; width: 8.5in;"></div>
 
-    <script src="/assets/js/database.js"></script>
-    <script src="/assets/js/export-pdf.js"></script>
-    <script src="/assets/js/script.js"></script>
+    <script src="assets/js/database.js"></script>
+    <script src="assets/js/script.js"></script>
     
 </body>
 </html>
