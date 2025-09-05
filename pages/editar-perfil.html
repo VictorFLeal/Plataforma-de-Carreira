@@ -4,50 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Perfil - LevelUp</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="stylesheet" href="/assets/css/perfil.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/perfil.css">
+    <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
 
     <script>
-  (function() {
-    const theme = localStorage.getItem('theme');
-    if (theme === 'dark') {
-      document.documentElement.classList.add('theme-dark');
-    }
-  })();
-</script>
-
+      (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('theme-dark');
+        }
+      })();
+    </script>
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <a href="/index.html">
-                <img src="/assets/images/LOGO-LEVELUP.png" alt="Logo LevelUp">
+            <a href="../index.html">
+                <img src="../assets/images/LOGO-LEVELUP.png" alt="Logo LevelUp">
             </a>
         </div>
         <nav class="nav">
-            <a href="/index.html">Início</a>
-            <a href="/pages/conquistas.html">Conquistas</a>
-            <a href="/pages/cursos.html">Cursos</a>
-            <a href="/pages/vagas.html">Vagas</a>
-            <a href="/pages/curriculo.html">Currículo</a>
+            <a href="../index.html">Início</a>
+            <a href="conquistas.html">Conquistas</a>
+            <a href="cursos.html">Cursos</a>
+            <a href="vagas.html">Vagas</a>
+            <a href="curriculo.html">Currículo</a>
         </nav>
         <div class="user-profile">
-            <img src="/assets/images/avatar-default.svg" alt="Usuário" class="avatar" id="user-avatar-btn">
+            <img src="../assets/images/avatar-default.svg" alt="Usuário" class="avatar" id="user-avatar-btn">
             <div class="dropdown-menu" id="user-dropdown-menu">
                  <div class="dropdown-header">
-                    <img src="/assets/images/avatar-default.svg" alt="Usuário" class="dropdown-avatar" id="dropdown-user-photo">
+                    <img src="../assets/images/avatar-default.svg" alt="Usuário" class="dropdown-avatar" id="dropdown-user-photo">
                     <div class="user-info">
                         <span class="user-name" id="dropdown-user-name">[Nome do Usuário]</span>
                         <span class="user-email" id="dropdown-user-email">[email@exemplo.com]</span>
                     </div>
                 </div>
                 <nav class="dropdown-nav">
-                    <a href="/pages/perfil.html">Meu Perfil</a>
-                    <a href="/pages/configuracoes.html">Configurações</a>
+                    <a href="perfil.html" class="active">Meu Perfil</a>
+                    <a href="configuracoes.html">Configurações</a>
                     <a href="#" class="logout">Sair</a>
                 </nav>
             </div>
@@ -65,7 +65,7 @@
                     <div class="main-card form-edit-profile">
                         <div class="sidebar-card centered">
                             <div class="profile-photo-container">
-                                <img src="/assets/images/avatar-default.svg" alt="Foto do Perfil" id="profile-photo">
+                                <img src="../assets/images/avatar-default.svg" alt="Foto do Perfil" id="profile-photo">
                                 <div class="photo-edit-overlay"><span>Trocar Foto</span></div>
                                 <input type="file" id="photo-upload" accept="image/*" style="display: none;">
                             </div>
@@ -110,8 +110,7 @@
         </div>
     </main>
 
-    <script src="/assets/js/database.js"></script>
-    <script src="/assets/js/script.js"></script>
-    <script src="/assets/js/editar-perfil.js"></script>
+    <script src="../assets/js/database.js"></script>
+    <script src="../assets/js/editar-perfil.js"></script>
 </body>
 </html>
