@@ -1,0 +1,214 @@
+/* /assets/css/curriculo.css (VERSÃO COMPLETA E CORRIGIDA PARA TEMAS) */
+
+.resume-builder-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.resume-builder-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.resume-builder-header div {
+    display: flex;
+    gap: 1rem;
+}
+
+.resume-builder-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+}
+
+/* --- Seção do Formulário (Esquerda) --- */
+.form-section {
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+details {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.5rem;
+    transition: border-color 0.3s;
+}
+details:last-of-type {
+    border-bottom: none;
+}
+
+summary {
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    padding-bottom: 1rem;
+    color: var(--text-primary);
+}
+summary::before {
+    content: '▶';
+    margin-right: 0.75rem;
+    font-size: 0.8em;
+    transition: transform 0.2s ease-in-out;
+}
+details[open] > summary::before {
+    transform: rotate(90deg);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+/* As regras globais em styles.css já estilizam input e textarea.
+   As regras abaixo são apenas para ajustes finos. */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.btn-add {
+    background: none;
+    border: 1px dashed var(--primary-blue);
+    color: var(--primary-blue);
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    width: 100%;
+    margin-top: 1rem;
+}
+.btn-add:hover {
+    background-color: var(--primary-blue);
+    color: #FFFFFF;
+}
+
+.dynamic-item {
+    background-color: var(--bg-primary);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    position: relative;
+    border: 1px solid var(--border-color);
+}
+
+.btn-remove {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: var(--danger-red);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.input-with-button { display: flex; gap: 0.5rem; }
+.input-with-button input { flex-grow: 1; }
+.input-with-button button { padding: 0.75rem 1rem; background-color: var(--primary-blue); color: #FFFFFF; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; }
+
+.skills-preview { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.skill-tag { background-color: var(--primary-blue); color: #FFFFFF; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; }
+.skill-tag .remove-skill { cursor: pointer; font-weight: bold; }
+
+.campo-condicional {
+    display: none;
+    border-left: 3px solid var(--primary-blue);
+    padding-left: 1rem;
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* --- Seção do Preview (Direita) --- */
+.preview-section {
+    position: sticky;
+    top: 2rem;
+    height: calc(100vh - 4rem);
+}
+
+.resume-preview {
+    background-color: var(--bg-secondary);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    height: 100%;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.resume-preview h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.resume-preview .cargo-desejado {
+    font-size: 1.1rem;
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.resume-preview .contact-info {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.resume-preview .section-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-blue); /* Usa a variável que se adapta ao tema */
+    border-bottom: 2px solid var(--primary-blue); /* Usa a variável que se adapta ao tema */
+    padding-bottom: 0.3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.experience-item, .education-item, .language-item {
+    margin-bottom: 1rem;
+}
+.experience-item p, .education-item p, .language-item p {
+    margin: 0.2rem 0;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.item-header h4 {
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-primary);
+}
+.item-header .periodo {
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil - LevelUp</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/perfil.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+
+    <script>
+  (function() {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') {
+      document.documentElement.classList.add('theme-dark');
+    }
+  })();
+</script>
+
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="/index.html">
+                <img src="/assets/images/LOGO-LEVELUP.png" alt="Logo LevelUp">
+            </a>
+        </div>
+        <nav class="nav">
+            <a href="/index.html">Início</a>
+            <a href="/pages/conquistas.html">Conquistas</a>
+            <a href="/pages/cursos.html">Cursos</a>
+            <a href="/pages/vagas.html">Vagas</a>
+            <a href="/pages/curriculo.html">Currículo</a>
+        </nav>
+        <div class="user-profile">
+            <img src="/assets/images/avatar-default.svg" alt="Usuário" class="avatar" id="user-avatar-btn">
+            <div class="dropdown-menu" id="user-dropdown-menu">
+                 <div class="dropdown-header">
+                    <img src="/assets/images/avatar-default.svg" alt="Usuário" class="dropdown-avatar" id="dropdown-user-photo">
+                    <div class="user-info">
+                        <span class="user-name" id="dropdown-user-name">[Nome do Usuário]</span>
+                        <span class="user-email" id="dropdown-user-email">[email@exemplo.com]</span>
+                    </div>
+                </div>
+                <nav class="dropdown-nav">
+                    <a href="/pages/perfil.html">Meu Perfil</a>
+                    <a href="/pages/configuracoes.html">Configurações</a>
+                    <a href="#" class="logout">Sair</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="profile-page">
+            <div class="profile-header">
+                <h2>Editar Perfil Detalhado</h2>
+            </div>
+            
+            <div class="profile-grid-single-col">
+                <section class="profile-main">
+                    <div class="main-card form-edit-profile">
+                        <div class="sidebar-card centered">
+                            <div class="profile-photo-container">
+                                <img src="/assets/images/avatar-default.svg" alt="Foto do Perfil" id="profile-photo">
+                                <div class="photo-edit-overlay"><span>Trocar Foto</span></div>
+                                <input type="file" id="photo-upload" accept="image/*" style="display: none;">
+                            </div>
+                            <h3 id="profile-name">[Nome do Usuário]</h3>
+                        </div>
+                        <div class="form-group">
+                            <label for="titulo-profissional">Título Profissional</label>
+                            <input type="text" id="titulo-profissional" placeholder="Ex: Estudante de Engenharia de Software | Foco em IA">
+                        </div>
+                    </div>
+
+                    <div class="main-card form-edit-profile">
+                        <h3>Dados Pessoais</h3>
+                        <div class="form-group"><label for="cpf">CPF</label><input type="text" id="cpf" placeholder="000.000.000-00"></div>
+                        <div class="form-group"><label for="nascimento">Data de Nascimento</label><input type="date" id="nascimento"></div>
+                        <div class="form-group"><label for="endereco">Endereço</label><input type="text" id="endereco" placeholder="Cidade, Estado"></div>
+                    </div>
+
+                    <div class="main-card form-edit-profile">
+                        <h3>Status Acadêmico</h3>
+                        <div class="form-group"><label for="instituicao">Instituição de Ensino</label><input type="text" id="instituicao" placeholder="Nome da sua faculdade ou escola"></div>
+                        <div class="form-group"><label for="curso-atual">Curso Atual</label><input type="text" id="curso-atual" placeholder="Ex: Engenharia da Computação"></div>
+                        <div class="form-group"><label for="semestre-atual">Semestre/Ano Atual</label><input type="text" id="semestre-atual" placeholder="Ex: 6º Semestre"></div>
+                        <div class="form-group"><label for="previsao-termino">Previsão de Término</label><input type="text" id="previsao-termino" placeholder="Ex: Dezembro/2026"></div>
+                    </div>
+
+                    <div class="main-card form-edit-profile">
+                        <h3>Objetivos de Carreira</h3>
+                        <div class="form-group">
+                            <label for="objetivo-pos-formatura">O que pretende ser quando se formar?</label>
+                            <textarea id="objetivo-pos-formatura" rows="4" placeholder="Descreva a área ou cargo que você almeja..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="preferencias-trabalho">Preferências de Trabalho</label>
+                            <input type="text" id="preferencias-trabalho" placeholder="Ex: Remoto, Híbrido, Grandes empresas de tecnologia...">
+                        </div>
+                    </div>
+                    
+                    <button id="save-profile-btn" class="btn-primary">Salvar Perfil Completo</button>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="/assets/js/database.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/editar-perfil.js"></script>
+</body>
+</html>

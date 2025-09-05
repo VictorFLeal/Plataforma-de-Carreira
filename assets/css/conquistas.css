@@ -1,0 +1,85 @@
+/* /assets/css/conquistas.css (VERSÃO FINAL COM SOMBRAS E CONTRASTE) */
+
+.progress-card {
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.progress-card h2 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.achievement-card {
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease-in-out;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-blue);
+}
+
+.achievement-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.achievement-card h3 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.achievement-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.achievement-card.locked {
+    background-color: var(--bg-accent);
+    box-shadow: none; 
+    opacity: 0.7;
+}
+
+.achievement-card.locked:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    border-color: var(--text-muted);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* EM: /assets/css/conquistas.css */
+/* Adicione no final do arquivo */
+
+/* Define a cor da barra de progresso especificamente nesta página */
+.progress-card .progress-bar {
+    background-color: #FBBF24; /* Um tom de dourado/âmbar vibrante */
+}
+
+/* EM: /assets/css/conquistas.css */
+/* Adicione no final do arquivo */
+
+/* Define a cor de fundo do "trilho" da barra de progresso */
+.progress-card .progress-container {
+    background-color: var(--bg-accent); /* Usa a cor de destaque do tema */
+}

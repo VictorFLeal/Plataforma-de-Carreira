@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LevelUp - Teste Vocacional Completo</title>
+    <link rel="stylesheet" href="/assets/css/auth.css">
+    <link rel="stylesheet" href="/assets/css/vocational-test.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+
+    <script>
+  (function() {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') {
+      document.documentElement.classList.add('theme-dark');
+    }
+  })();
+</script>
+
+</head>
+<body>
+
+    <main class="auth-container">
+        <div class="auth-box" id="test-box">
+            
+            <div id="questions-section">
+                <div class="auth-header">
+                    <img src="/assets/images/LOGO-LEVELUP.png" alt="LevelUp Logo" class="logo-image">
+                    <h2>Descubra sua vocação com nossa IA</h2>
+                    <p>Responda com sinceridade para uma análise precisa e personalizada do seu perfil profissional.</p>
+                </div>
+
+                <form id="vocational-form">
+                    
+                    <div class="question">
+                        <label>1. Gosto de atividades que envolvem o uso de ferramentas, máquinas ou equipamentos.</label>
+                        <div class="options">
+                            <span>Discordo totalmente</span>
+                            <input type="range" name="q1" min="1" max="5" value="3" data-category="R">
+                            <span>Concordo totalmente</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label>2. Prefiro tarefas que me permitam construir ou reparar coisas.</label>
+                        <div class="options">
+                            <span>Discordo totalmente</span>
+                            <input type="range" name="q2" min="1" max="5" value="3" data-category="R">
+                            <span>Concordo totalmente</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label>3. Sinto-me à vontade trabalhando ao ar livre ou em ambientes práticos.</label>
+                        <div class="options">
+                            <span>Discordo totalmente</span>
+                            <input type="range" name="q3" min="1" max="5" value="3" data-category="R">
+                            <span>Concordo totalmente</span>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <label>4. Tenho interesse em pesquisar e compreender como as coisas funcionam.</label>
+                        <div class="options">
+                            <span>Discordo totalmente</span>
+                            <input type="range" name="q4" min="1" max="5" value="3" data-category="I">
+                            <span>Concordo totalmente</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label>5. Gosto de resolver problemas complexos e que exigem raciocínio lógico.</label>
+                        <div class="options">
+                            <span>Discordo totalmente</span>
+                            <input type="range" name="q5" min="1" max="5" value="3" data-category="I">
+                            <span>Concordo totalmente</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label>6. Prefiro atividades intelectuais e abstratas àquelas que envolvem trabalho manual.</label>
+                        <div class="options">
+                            <span>Discordo totalmente</span>
+                            <input type="range" name="q6" min="1" max="5" value="3" data-category="I">
+                            <span>Concordo totalmente</span>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <label>7. Gosto de expressar minhas ideias e emoções de forma criativa (ex: escrita, música, design).</label>
+                        <div class="options">
+                            <span>Discordo totalmente</span>
+                            <input type="range" name="q7" min="1" max="5" value="3" data-category="A">
+                            <span>Concordo totalmente</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label>8. Prefiro trabalhar em ambientes flexíveis e sem muitas regras.</label>
+                        <div class="options">
+                            <span>Discordo totalmente</span>
+                            <input type="range" name="q8" min="1" max="5" value="3" data-category="A">
+                            <span>Concordo totalmente</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label>9. Tenho imaginação vívida e gosto de inovar.</label>
+                        <div class="options">
+                            <span>Discordo totalmente</span>
+                            <input type="range" name="q9" min="1" max="5" value="3" data-category="A">
+                            <span>Concordo totalmente</span>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <label>10. Gosto de ajudar, ensinar ou cuidar de outras pessoas.</label>
+                        <div class="options">
+                            <span>Discordo totalmente</span>
+                            <input type="range" name="q10" min="1" max="5" value="3" data-category="S">
+                            <span>Concordo totalmente</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label>11. Sinto-me bem trabalhando em equipe e mediando conflitos.</label>
+                        <div class="options">
+                            <span>Discordo totalmente</span>
+                            <input type="range" name="q11" min="1" max="5" value="3" data-category="S">
+                            <span>Concordo totalmente</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label>12. Tenho facilidade em me comunicar e entender os sentimentos alheios.</label>
+                        <div class="options">
+                            <span>Discordo totalmente</span>
+                            <input type="range" name="q12" min="1" max="5" value="3" data-category="S">
+                            <span>Concordo totalmente</span>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <label>13. Gosto de liderar e motivar pessoas para alcançar objetivos.</label>
+                        <div class="options">
+                            <span>Discordo totalmente</span>
+                            <input type="range" name="q13" min="1" max="5" value="3" data-category="E">
+                            <span>Concordo totalmente</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label>14. Tenho facilidade em persuadir e influenciar outras pessoas.</label>
+                        <div class="options">
+                            <span>Discordo totalmente</span>
+                            <input type="range" name="q14" min="1" max="5" value="3" data-category="E">
+                            <span>Concordo totalmente</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label>15. Sinto-me atraído por desafios e oportunidades de negócios.</label>
+                        <div class="options">
+                            <span>Discordo totalmente</span>
+                            <input type="range" name="q15" min="1" max="5" value="3" data-category="E">
+                            <span>Concordo totalmente</span>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <label>16. Prefiro trabalhar com dados, números e organizar informações.</label>
+                        <div class="options">
+                            <span>Discordo totalmente</span>
+                            <input type="range" name="q16" min="1" max="5" value="3" data-category="C">
+                            <span>Concordo totalmente</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label>17. Gosto de seguir regras claras e trabalhar com precisão e atenção aos detalhes.</label>
+                        <div class="options">
+                            <span>Discordo totalmente</span>
+                            <input type="range" name="q17" min="1" max="5" value="3" data-category="C">
+                            <span>Concordo totalmente</span>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label>18. Me sinto mais seguro em ambientes de trabalho estáveis e previsíveis.</label>
+                        <div class="options">
+                            <span>Discordo totalmente</span>
+                            <input type="range" name="q18" min="1" max="5" value="3" data-category="C">
+                            <span>Concordo totalmente</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="auth-button">Analisar Meu Perfil Vocacional</button>
+                </form>
+            </div>
+
+            <div id="loading-section" class="hidden">
+                <div class="spinner"></div>
+                <h2>Analisando seu Potencial...</h2>
+                <p>Nossa inteligência artificial está processando suas respostas para criar uma análise personalizada e precisa.</p>
+                <p>Isso pode levar alguns instantes.</p>
+            </div>
+
+            <div id="results-section" class="hidden">
+                <div class="auth-header">
+                    <img src="/assets/images/LOGO-LEVELUP.png" alt="LevelUp Logo" class="logo-image">
+                    <h2>Seu Perfil Vocacional Completo</h2>
+                    <p>Aqui está a análise detalhada baseada nas suas respostas:</p>
+                </div>
+                <div id="ai-results">
+                    </div>
+
+                <div class="results-actions">
+                    <button id="accept-profile-btn" class="auth-button btn-primary">Aceitar Perfil e Continuar</button>
+                    <button id="other-options-btn" class="auth-button btn-secondary">Ver Outras Opções</button>
+                    <button id="redo-test-btn" class="auth-button btn-tertiary">Refazer Teste</button>
+                </div>
+            </div>
+
+            <div id="manual-selection-section" class="hidden">
+                <div class="auth-header">
+                    <h2>Escolha sua Área de Interesse</h2>
+                    <p>Selecione a área com a qual você mais se identifica para personalizarmos sua experiência.</p>
+                </div>
+                <div id="profession-list" class="profession-list">
+                    </div>
+                <button id="confirm-selection-btn" class="auth-button btn-primary" disabled>Confirmar e Ir para o Dashboard</button>
+            </div>
+
+        </div>
+    </main>
+    <script src="vocational-test.js"></script>
+</body>
+</html>

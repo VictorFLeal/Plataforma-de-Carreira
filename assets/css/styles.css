@@ -1,0 +1,439 @@
+/* =============================================================== */
+/* SEU TEMA CLARO ORIGINAL (INTACTO)                                */
+/* =============================================================== */
+/* TEMA CLARO (Padrão) */
+:root {
+    --primary-blue: #3B82F6;
+    --dark-blue: #1E40AF;
+
+    /* A MUDANÇA ESTÁ AQUI: Usando tons de cinza mais distintos */
+    --light-gray: #E5E7EB;   /* Cinza mais escuro para o fundo da página */
+    --white: #FFFFFF;        /* Branco puro para os cards */
+    
+    --medium-gray: #9CA3AF;
+    --dark-text: #1F2937;
+    --gradient-blue: linear-gradient(90deg, #3B82F6 0%, #1E40AF 100%);
+    --danger-red: #EF4444;
+
+    /* Variáveis semânticas agora usam os novos valores */
+    --bg-primary: var(--light-gray); /* Fundo da página será o cinza #E5E7EB */
+    --bg-secondary: var(--white);    /* Fundo dos cards será branco #FFFFFF */
+    --bg-accent: #F3F4F6;            /* Accent agora é o cinza mais claro */
+    --text-primary: var(--dark-text);
+    --text-secondary: #6B7280;
+    --text-muted: var(--medium-gray);
+    --border-color: #D1D5DB;         /* Borda um pouco mais escura para definir os cards */
+}
+
+/* =============================================================== */
+/* TEMA ESCURO (PALETA DE CORES REFINADA E COM CONTRASTE)          */
+/* =============================================================== */
+html.theme-dark {
+    --primary-blue: #60A5FA; /* Azul principal mais claro para contraste no escuro */
+    --dark-blue: #3B82F6;    /* Azul escuro para hover, etc. */
+
+    /* Fundo da página, dos cards e acentos com contraste definido */
+    --bg-primary: #121212;      /* Fundo principal MAIS ESCURO (quase preto) */
+    --bg-secondary: #1E2228;    /* Fundo dos cards, header (um tom acima do primário) */
+    --bg-accent: #2C303A;       /* Fundo para elementos de destaque/hover (um tom acima do secundário) */
+
+    /* Cores de texto adaptadas para fundo escuro */
+    --text-primary: #F0F0F0;    /* Branco suave para o texto principal */
+    --text-secondary: #B0B0B0;  /* Cinza claro para textos de suporte */
+    --text-muted: #7F8C8D;      /* Cinza médio para placeholders, textos muito secundários */
+    
+    --border-color: #3C4048;    /* Borda sutil para separar elementos */
+    --danger-red: #F87171;      /* Vermelho mais claro para contraste */
+}
+
+/* =============================================================== */
+/* ESTILOS GLOBAIS (AGORA USANDO AS NOVAS VARIÁVEIS SEMÂNTICAS)    */
+/* =============================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary); /* DE VOLTA AO NORMAL */
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background-color: var(--bg-secondary); /* Usa bg-secondary */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--border-color); /* Adiciona borda sutil */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text-primary); /* Usa text-primary */
+    margin-left: 2rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.nav a:hover {
+    color: var(--primary-blue);
+}
+
+.nav a.active {
+    color: var(--primary-blue);
+    border-bottom: 2px solid var(--primary-blue);
+}
+
+.user-profile .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.hero-banner {
+    background: var(--gradient-blue);
+    color: #FFFFFF; /* Texto no gradiente é sempre branco */
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-banner h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    color: #FFFFFF; /* Garante branco */
+}
+
+.hero-banner p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    color: #FFFFFF; /* Garante branco */
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: #FFFFFF !important; /* Cor do texto sempre branca */
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none !important; /* REMOVE O SUBLINHADO */
+    display: inline-block;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card.circular-card {
+    background-color: var(--bg-secondary); /* Usa bg-secondary para o fundo do card */
+    border: 1px solid var(--border-color); /* Borda sutil */
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    max-width: 300px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.icon-container {
+    background-color: var(--bg-accent); /* Usa bg-accent para o fundo do ícone */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s;
+}
+/* Garante que o ícone dentro do container seja visível */
+.icon-container svg {
+    stroke: var(--text-primary);
+    transition: stroke 0.3s;
+}
+.icon-container svg path {
+    fill: var(--text-primary); /* Para ícones que são preenchidos */
+    stroke: var(--text-primary); /* Para ícones que são contorno */
+    transition: fill 0.3s, stroke 0.3s;
+}
+
+
+.content-placeholder {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--bg-accent); /* Usa bg-accent */
+    border-radius: 8px;
+    text-align: center;
+    color: var(--text-secondary); /* Texto mais claro */
+    font-style: italic;
+    margin-top: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.resume-section {
+    background: var(--gradient-blue);
+    color: #FFFFFF;
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resume-section .btn-secondary {
+    background-color: #FFFFFF;
+    color: var(--primary-blue);
+}
+
+.resume-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-secondary {
+    background-color: var(--bg-secondary);
+    color: var(--primary-blue);
+    padding: 0.7rem 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none !important; /* REMOVE O SUBLINHADO */
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-accent);
+}
+
+.progress-container {
+    width: 80%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.3); /* Mantém este fixo para o gradiente */
+    border-radius: 20px;
+    margin: 0 auto 1rem auto;
+    height: 12px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #FFFFFF; /* Barra de progresso sempre branca */
+    border-radius: 20px;
+    transition: width 0.5s ease-in-out;
+}
+
+#progress-text {
+    font-size: 0.9rem;
+    color: var(--text-primary); /* AGORA USA A COR DO TEMA (preto no modo claro) */
+    opacity: 0.9;
+    display: block;
+    margin-bottom: 1.5rem;
+    text-align: center; /* Garante o alinhamento central */
+}
+
+/* 2. REGRA ESPECÍFICA PARA A PÁGINA INICIAL */
+/* Força o texto a ser branco APENAS quando estiver dentro do banner azul */
+.hero-banner #progress-text {
+    color: #FFFFFF;
+}
+
+/* =============================================================== */
+/* ESTILOS APRIMORADOS PARA O MENU DROPDOWN DO USUÁRIO             */
+/* =============================================================== */
+
+.user-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.2s ease-in-out, background-color 0.3s;
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background-color: var(--bg-secondary); /* Usa bg-secondary */
+    min-width: 240px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    border-radius: 8px;
+    z-index: 100;
+    border: 1px solid var(--border-color); /* Usa border-color */
+}
+
+.dropdown-menu.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color); /* Usa border-color */
+    transition: border-color 0.3s;
+}
+
+.dropdown-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.user-name {
+    font-weight: 600;
+    color: var(--text-primary); /* Usa text-primary */
+    font-size: 1rem;
+}
+
+.user-email {
+    font-size: 0.85rem;
+    color: var(--text-secondary); /* Usa text-secondary */
+}
+
+.dropdown-nav {
+    padding: 0.5rem 0;
+}
+
+.dropdown-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.75rem 1rem;
+    color: var(--text-primary); /* Usa text-primary */
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.dropdown-nav a:hover {
+    background-color: var(--bg-accent); /* Usa bg-accent */
+    color: var(--primary-blue);
+    transform: translateX(5px);
+}
+
+.dropdown-nav a svg {
+    stroke: var(--text-secondary); /* Usa text-secondary */
+    transition: stroke 0.2s ease;
+}
+.dropdown-nav a:hover svg {
+    stroke: var(--primary-blue);
+}
+
+
+.dropdown-nav a.logout {
+    color: var(--danger-red); /* Usa danger-red */
+    border-top: 1px solid var(--border-color); /* Usa border-color */
+    margin-top: 0.5rem;
+    transition: all 0.2s ease, border-color 0.3s;
+}
+.dropdown-nav a.logout svg {
+    stroke: var(--danger-red); /* Usa danger-red */
+}
+.dropdown-nav a.logout:hover {
+    color: #c0392b; /* Mantém um tom mais escuro para hover */
+}
+.dropdown-nav a.logout:hover svg {
+    stroke: #c0392b; /* Mantém um tom mais escuro para hover */
+}
+
+/* =============================================================== */
+/* ESTILOS GLOBAIS PARA FORMULÁRIOS (INPUT, SELECT, ETC)           */
+/* =============================================================== */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--bg-secondary); /* Fundo dos inputs agora é bg-secondary */
+    color: var(--text-primary);
+    outline: none;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+    color: var(--text-muted);
+    transition: color 0.3s;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%236B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px;
+    padding-right: 2.5rem;
+}
+
+html.theme-dark select {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%239CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+}

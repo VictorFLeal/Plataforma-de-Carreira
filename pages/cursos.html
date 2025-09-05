@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cursos - LevelUp</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/cursos-vagas.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon" />
+
+    <script>
+      (function () {
+        const theme = localStorage.getItem("theme");
+        if (theme === "dark") {
+          document.documentElement.classList.add("theme-dark");
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <a href="/index.html">
+          <img src="/assets/images/LOGO-LEVELUP.png" alt="Logo LevelUp" />
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="/index.html">Início</a>
+        <a href="/pages/conquistas.html">Conquistas</a>
+        <a href="/pages/cursos.html" class="active">Cursos</a>
+        <a href="/pages/vagas.html">Vagas</a>
+        <a href="/pages/curriculo.html">Currículo</a>
+      </nav>
+      <div class="user-profile">
+        <img
+          src="/assets/images/avatar-default.svg"
+          alt="Usuário"
+          class="avatar"
+          id="user-avatar-btn"
+        />
+
+        <div class="dropdown-menu" id="user-dropdown-menu">
+          <div class="dropdown-header">
+            <img
+              src="/assets/images/avatar-default.svg"
+              alt="Usuário"
+              class="dropdown-avatar"
+              id="dropdown-user-photo"
+            />
+            <div class="user-info">
+              <span class="user-name" id="dropdown-user-name"
+                >[Nome do Usuário]</span
+              >
+              <span class="user-email" id="dropdown-user-email"
+                >[email@exemplo.com]</span
+              >
+            </div>
+          </div>
+          <nav class="dropdown-nav">
+            <a href="/pages/perfil.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              Meu Perfil
+            </a>
+            <a href="/pages/configuracoes.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 0 2l-.15.08a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1 0-2l.15-.08a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+                ></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              Configurações
+            </a>
+            <a href="#" class="logout">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
+              Sair
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="page-header">
+        <h2>Explore Nossos Cursos</h2>
+        <div class="filters">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Buscar por palavra-chave..."
+          />
+          <select class="filter-select">
+            <option value="">Todas as Categorias</option>
+            <option value="tecnologia">Tecnologia</option>
+            <option value="negocios">Negócios</option>
+            <option value="design">Design</option>
+            <option value="marketing">Marketing</option>
+          </select>
+          <button class="btn-primary">Buscar</button>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <div class="card-item curso-card">
+          <div class="card-image">Imagem do Curso</div>
+          <div class="card-content">
+            <h3>Desenvolvimento Web Full Stack</h3>
+            <p class="provider">Por LevelUp Academy</p>
+            <div class="tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">React</span>
+              <span class="tag">Node.js</span>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn-primary">Ver Detalhes</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item curso-card">
+          <div class="card-image">Imagem do Curso</div>
+          <div class="card-content">
+            <h3>UI/UX Design para Iniciantes</h3>
+            <p class="provider">Por Ana Souza</p>
+            <div class="tags">
+              <span class="tag">Figma</span>
+              <span class="tag">Prototipagem</span>
+              <span class="tag">User Research</span>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn-primary">Ver Detalhes</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item curso-card">
+          <div class="card-image">Imagem do Curso</div>
+          <div class="card-content">
+            <h3>Marketing Digital Essencial</h3>
+            <p class="provider">Por Escola de Marketing</p>
+            <div class="tags">
+              <span class="tag">SEO</span>
+              <span class="tag">Google Ads</span>
+              <span class="tag">Social Media</span>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn-primary">Ver Detalhes</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/assets/js/database.js"></script>
+    <script src="/assets/js/export-pdf.js"></script>
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>

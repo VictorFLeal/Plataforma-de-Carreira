@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construtor de Currículo - LevelUp</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/curriculo.css">
+    <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+  (function() {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') {
+      document.documentElement.classList.add('theme-dark');
+    }
+  })();
+</script>
+
+</head>
+<body>
+    
+    <header class="header">
+        <div class="logo">
+            <a href="/index.html">
+                <img src="/assets/images/LOGO-LEVELUP.png" alt="Logo LevelUp">
+            </a>
+        </div>
+        <nav class="nav">
+            <a href="/index.html">Início</a>
+            <a href="/pages/conquistas.html">Conquistas</a>
+            <a href="/pages/cursos.html">Cursos</a>
+            <a href="/pages/vagas.html">Vagas</a>
+            <a href="/pages/curriculo.html" class="active">Currículo</a>
+        </nav>
+        <div class="user-profile">
+            <img src="/assets/images/avatar-default.svg" alt="Usuário" class="avatar" id="user-avatar-btn">
+            <div class="dropdown-menu" id="user-dropdown-menu">
+                <div class="dropdown-header">
+                    <img src="/assets/images/avatar-default.svg" alt="Usuário" class="dropdown-avatar" id="dropdown-user-photo">
+                    <div class="user-info">
+                        <span class="user-name" id="dropdown-user-name">[Nome do Usuário]</span>
+                        <span class="user-email" id="dropdown-user-email">[email@exemplo.com]</span>
+                    </div>
+                </div>
+                <nav class="dropdown-nav">
+                    <a href="/pages/perfil.html">Meu Perfil</a>
+                    <a href="/pages/configuracoes.html">Configurações</a>
+                    <a href="#" class="logout">Sair</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="resume-builder-header">
+            <h2>Construtor de Currículo</h2>
+            <div>
+                <button id="save-resume-btn" class="btn-secondary">Salvar Alterações</button>
+                <button id="export-resume-pdf" class="btn-primary">Exportar para PDF</button>
+            </div>
+        </div>
+
+        <div class="resume-builder-container">
+            <div class="form-section">
+                <details open>
+                    <summary>Dados Pessoais</summary>
+                    <div class="form-group"><label for="nome">Nome Completo</label><input type="text" id="nome" placeholder="Seu nome completo"></div>
+                    <div class="form-group"><label for="cargo">Cargo Desejado</label><input type="text" id="cargo" placeholder="Ex: Desenvolvedor Frontend"></div>
+                    <div class="form-group"><label for="email">Email</label><input type="email" id="email" placeholder="seu.email@exemplo.com"></div>
+                    <div class="form-group"><label for="telefone">Telefone</label><input type="tel" id="telefone" placeholder="(00) 91234-5678"></div>
+                    <div class="form-group"><label for="linkedin">Perfil LinkedIn</label><input type="text" id="linkedin" placeholder="linkedin.com/in/seu-usuario"></div>
+                    <div class="form-group"><label for="resumo">Resumo Profissional</label><textarea id="resumo" rows="5" placeholder="Fale sobre suas principais qualificações e objetivos..."></textarea></div>
+                </details>
+                <details>
+                    <summary>Experiência Profissional</summary>
+                    <div id="experience-list"></div>
+                    <button id="add-experience-btn" class="btn-add">+ Adicionar Experiência</button>
+                </details>
+                <details>
+                    <summary>Formação Acadêmica</summary>
+                    <div id="education-list"></div>
+                    <button id="add-education-btn" class="btn-add">+ Adicionar Formação</button>
+                </details>
+                <details>
+                    <summary>Habilidades</summary>
+                    <div class="form-group">
+                        <div class="input-with-button">
+                            <input type="text" id="skill-input" placeholder="Ex: JavaScript">
+                            <button id="add-skill-btn">Adicionar</button>
+                        </div>
+                    </div>
+                    <div id="skills-container" class="skills-preview"></div>
+                </details>
+                <details>
+                    <summary>Idiomas</summary>
+                    <div id="language-list"></div>
+                    <button id="add-language-btn" class="btn-add">+ Adicionar Idioma</button>
+                </details>
+            </div>
+
+            <div class="preview-section">
+                <div class="resume-preview">
+                    <h1 id="preview-nome">Seu Nome</h1>
+                    <p id="preview-cargo" class="cargo-desejado">Seu Cargo Desejado</p>
+                    <div class="contact-info">
+                        <span id="preview-email">email@exemplo.com</span> |
+                        <span id="preview-telefone">(00) 12345-6789</span> |
+                        <span id="preview-linkedin">linkedin.com/in/seu-perfil</span>
+                    </div>
+                    <h3 class="section-title">Resumo</h3>
+                    <p id="preview-resumo">Um resumo profissional sobre você aparecerá aqui.</p>
+                    <h3 class="section-title">Experiência</h3>
+                    <div id="preview-experiencia"></div>
+                    <h3 class="section-title">Formação</h3>
+                    <div id="preview-formacao"></div>
+                    <h3 class="section-title">Habilidades</h3>
+                    <div id="preview-habilidades" class="skills-preview"></div>
+                    <h3 class="section-title">Idiomas</h3>
+                    <div id="preview-idiomas"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/assets/js/database.js"></script>
+    <script src="/assets/js/export-pdf.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/curriculo.js"></script>
+</body>
+</html>

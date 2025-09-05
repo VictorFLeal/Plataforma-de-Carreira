@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LevelUp - Login</title>
+    <link rel="stylesheet" href="/assets/css/auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+
+    <script>
+  (function() {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') {
+      document.documentElement.classList.add('theme-dark');
+    }
+  })();
+</script>
+
+</head>
+<body>
+
+    <main class="auth-container">
+        <div class="auth-box">
+            <div class="auth-header">
+                <img src="/assets/images/LOGO-LEVELUP.png" alt="LevelUp Logo" class="logo-image">
+                <h2>Entrar na sua conta</h2>
+            </div>
+            
+            <form id="login-form" action="index.html"> <div class="input-group">
+                    <input type="email" placeholder="seu.email@exemplo.com" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Senha" required>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Lembrar de mim</label>
+                </div>
+                <button type="submit" class="auth-button">ACESSAR CONTA</button>
+            </form>
+            
+            <p class="separator">ou</p>
+
+            <div class="social-login">
+                <button class="social-login-btn google-btn">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.56 12.25C22.56 11.45 22.49 10.68 22.36 9.93H12V14.4H18.02C17.73 15.93 16.83 17.24 15.39 18.18V21.09H19.32C21.43 19.16 22.56 16.03 22.56 12.25Z" fill="#4285F4"/>
+        <path d="M12 23C14.97 23 17.45 22.02 19.32 20.59L15.39 17.68C14.39 18.33 13.28 18.69 12 18.69C9.28 18.69 6.99 16.89 6.14 14.44H2.07V17.43C3.96 20.89 7.72 23 12 23Z" fill="#34A853"/>
+        <path d="M6.14 14.44C5.89 13.72 5.75 12.96 5.75 12.18C5.75 11.4 5.89 10.63 6.14 9.92V6.93H2.07C1.22 8.63 0.75 10.46 0.75 12.31C0.75 14.17 1.22 16 2.07 17.7L6.14 14.75V14.44Z" fill="#FBBC05"/>
+        <path d="M12 5.68C13.44 5.68 14.81 6.18 15.82 7.15L19.4 3.58C17.45 1.83 14.97 0.850002 12 0.850002C7.72 0.850002 3.96 3.11 2.07 6.57L6.14 9.56C6.99 7.11 9.28 5.68 12 5.68Z" fill="#EA4335"/>
+    </svg>
+    <span>Entrar com Google</span>
+</button>
+
+<button class="social-login-btn linkedin-btn">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20.447 20.45H20.45V20.45H20.447V20.45ZM20.447 20.45H20.45V20.45H20.447V20.45Z" fill="white"/>
+        <path d="M2.39999 21.5H6.59999V8.4H2.39999V21.5ZM4.49999 2.5C3.29999 2.5 2.29999 3.5 2.29999 4.7C2.29999 5.9 3.19999 6.9 4.39999 6.9H4.49999C5.79999 6.9 6.69999 5.9 6.69999 4.7C6.69999 3.5 5.79999 2.5 4.49999 2.5Z" fill="#0A66C2"/>
+        <path d="M8.90002 8.4H13.1V10.3C13.7 9.2 15.1 8.1 17.5 8.1C21.6 8.1 22.5 10.8 22.5 14.4V21.5H18.3V15.4C18.3 12.8 17.8 11.3 16 11.3C13.8 11.3 13.1 12.9 13.1 15.4V21.5H8.90002V8.4Z" fill="#0A66C2"/>
+    </svg>
+    <span>Entrar com LinkedIn</span>
+</button>
+            </div>
+            
+            <div class="auth-links">
+                <p>Não tem uma conta? <a href="register.html">Cadastre-se agora</a></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="/assets/js/auth.js"></script>
+</body>
+</html>
